@@ -11,7 +11,7 @@ namespace FeedAggregaror.Controllers
     {
         // GET api/Feed
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Item>>> Get()
+        public async Task<ActionResult> Get()
         {
             //var parser = new ItemsParser();
 
