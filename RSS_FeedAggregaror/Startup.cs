@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using FeedAggregator.BLL.MappingProfiles;
 using FeedAggregator.DAL.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,8 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace FeedAggregaror
 {
@@ -26,11 +22,14 @@ namespace FeedAggregaror
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigureAutomapper(services);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<FeedAggregatorDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                                          b => b.MigrationsAssembly("FeedAggregator.DAL")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +51,19 @@ namespace FeedAggregaror
             }
 
             app.UseMvc();
+        }
+
+
+        public virtual IServiceCollection ConfigureAutomapper(IServiceCollection services)
+        {
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<UserCollectionProfile>();
+                cfg.AddProfile<FeedProfile>();
+                cfg.AddProfile<FeedItemProfile>();
+            });
+
+            return services;
         }
     }
 }

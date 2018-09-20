@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
+using FeedAggregator.BLL.Interfaces;
+using FeedAggregator.Shared.Dtos;
 using FeedParser.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,13 +13,26 @@ namespace FeedAggregaror.Controllers
     [ApiController]
     public class CollectionController : ControllerBase
     {
-        // GET api/Feed
-        [HttpGet]
-        public async Task<ActionResult> Get()
-        {
-            //var parser = new ItemsParser();
+        private IUserCollectionService _userCollectionService;
 
-            return Ok();/*(Ok(await parser.Parse("http://blogzinet.free.fr/atom.php", FeedType.Atom)));*/
+        public CollectionController(IUserCollectionService service)
+        {
+            _userCollectionService = service;
+        }
+        // GET api/feed
+        [HttpGet("{id}")]
+        public async Task<ActionResult<UserCollectionDto>> Get(string id)
+        {
+            try
+            {
+                var dto = await _userCollectionService.GetUserCollectionByUserIdAsync(id);
+                if (dto == null) return NoContent();
+                return Ok(dto);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
         }
     }
 }
