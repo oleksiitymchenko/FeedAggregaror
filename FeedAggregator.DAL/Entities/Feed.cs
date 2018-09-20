@@ -2,7 +2,7 @@
 
 namespace FeedAggregator.DAL.Entities
 {
-    public class FeedCollection:Entity
+    public class Feed:Entity
     {
         public string ChanellUrl { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace FeedAggregator.DAL.Interfaces
 {
-    public interface IFeedCollectionRepository: IRepository<FeedCollection>
+    public interface IFeedRepository: IRepository<Feed>
     {
     }
 }

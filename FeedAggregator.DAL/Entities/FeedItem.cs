@@ -13,6 +13,6 @@ namespace FeedAggregator.DAL.Entities
         public DateTime PublishDate { get; set; }
 
         public int FeedCollectionId { get; set; }
-        public FeedCollection FeedCollection { get; set; }
+        public Feed FeedCollection { get; set; }
     }
 }

@@ -12,10 +12,10 @@ namespace FeedAggregator.DAL.Data
             modelBuilder.Entity<UserCollection>().HasData(
                 new UserCollection() { Id = 1, UserId = "12345678" });
 
-            modelBuilder.Entity<FeedCollection>().HasData(
-                new FeedCollection()
+            modelBuilder.Entity<Feed>().HasData(
+                new Feed()
                  { Id = 1, ChanellUrl = "http://rss.cnn.com/rss/cnn_topstories.rss", UserCollectionId = 1 },
-                new FeedCollection()
+                new Feed()
                  { Id = 2, ChanellUrl = "http://newsrss.bbc.co.uk/rss/newsonline_world_edition/americas/rss.xml", UserCollectionId = 1 });
 
             modelBuilder.Entity<FeedItem>().HasData(

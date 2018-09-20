@@ -6,7 +6,7 @@ namespace FeedAggregator.DAL.Data
     public class FeedAggregatorDbContext : DbContext
     {
         public DbSet<UserCollection> UserCollections { get; set; }
-        public DbSet<FeedCollection> FeedCollections { get; set; }
+        public DbSet<Feed> FeedCollections { get; set; }
         public DbSet<FeedItem> FeedItems { get; set; }
 
         public FeedAggregatorDbContext(DbContextOptions<FeedAggregatorDbContext> options) : base(options)
@@ -23,7 +23,7 @@ namespace FeedAggregator.DAL.Data
                         .WithOne(c => c.UserCollection)
                         .IsRequired();
 
-            modelBuilder.Entity<FeedCollection>()
+            modelBuilder.Entity<Feed>()
                         .HasMany(o => o.FeedItems)
                         .WithOne(c => c.FeedCollection)
                         .IsRequired();

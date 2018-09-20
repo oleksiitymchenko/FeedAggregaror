@@ -17,12 +17,12 @@ namespace FeedAggregator.DAL
         private FeedAggregatorDbContext _context;
         private IMapper _mapper;
         private IUserCollectionRepository _userCollectionRepository;
-        private IFeedCollectionRepository _feedCollectionRepository;
+        private IFeedRepository _feedCollectionRepository;
         private IFeedItemRepository _feedItemRepository;
 
         public IUserCollectionRepository UserCollectionRepository => _userCollectionRepository ?? (_userCollectionRepository = new UserCollectionRepository(_context, _mapper));
 
-        public IFeedCollectionRepository FeedCollectionRepository => _feedCollectionRepository ?? (_feedCollectionRepository = new FeedCollectionRepository(_context, _mapper));
+        public IFeedRepository FeedCollectionRepository => _feedCollectionRepository ?? (_feedCollectionRepository = new FeedRepository(_context, _mapper));
 
         public IFeedItemRepository FeedItemRepository => _feedItemRepository ?? (_feedItemRepository = new FeedItemRepository(_context, _mapper));
 
