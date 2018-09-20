@@ -2,7 +2,7 @@
 
 namespace FeedAggregator.DAL.Entities
 {
-    public class UserCollections: Entity
+    public class UserCollection: Entity
     {
         public string UserId { get; set; } //uId that firebase will return 
 

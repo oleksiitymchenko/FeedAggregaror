@@ -6,6 +6,9 @@ namespace FeedAggregator.DAL.Entities
     {
         public string ChanellUrl { get; set; }
 
+        public int UserCollectionId { get; set; }
+        public UserCollection UserCollection { get; set; }
+
         public IList<FeedItem> FeedItems { get; set; }
     }
 }
