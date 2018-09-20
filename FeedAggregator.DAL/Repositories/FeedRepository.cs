@@ -5,9 +5,9 @@ using FeedAggregator.DAL.Interfaces;
 
 namespace FeedAggregator.DAL.Repositories
 {
-    public class FeedItemRepository: Repository<FeedItem>, IFeedItemRepository
+    public class FeedRepository: Repository<Feed>, IFeedRepository
     {
-        public FeedItemRepository(FeedAggregatorDbContext context, IMapper mapper): base(context, mapper)
+        public FeedRepository(FeedAggregatorDbContext context, IMapper mapper):base(context, mapper)
         {
 
         }
