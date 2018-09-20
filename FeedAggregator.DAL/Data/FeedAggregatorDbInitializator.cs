@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FeedAggregator.DAL.Entities;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 
 namespace FeedAggregator.DAL.Data
 {
@@ -6,7 +9,25 @@ namespace FeedAggregator.DAL.Data
     {
         public static void Seed(this ModelBuilder modelBuilder)
         {
-            //TODO: Create seed entities
+            modelBuilder.Entity<UserCollection>().HasData(
+                new UserCollection() { Id = 1, UserId = "12345678" });
+
+            modelBuilder.Entity<FeedCollection>().HasData(
+                new FeedCollection()
+                 { Id = 1, ChanellUrl = "http://rss.cnn.com/rss/cnn_topstories.rss", UserCollectionId = 1 },
+                new FeedCollection()
+                 { Id = 2, ChanellUrl = "http://newsrss.bbc.co.uk/rss/newsonline_world_edition/americas/rss.xml", UserCollectionId = 1 });
+
+            modelBuilder.Entity<FeedItem>().HasData(
+                new FeedItem()
+                 { Id = 1, Title = "FirstNews", Link = "Link1", Content = "Some text that is content", PublishDate = DateTime.Now, FeedCollectionId = 1 },
+                 new FeedItem()
+                 { Id = 2, Title = "SecondNews", Link = "Link2", Content = "Some text that is content", PublishDate = DateTime.Now, FeedCollectionId = 1 },
+                 new FeedItem()
+                 { Id = 3, Title = "ThirdNews", Link = "Link3", Content = "Some text that is content", PublishDate = DateTime.Now, FeedCollectionId = 2 },
+                 new FeedItem()
+                 { Id = 4, Title = "FourthNews", Link = "Link4", Content = "Some text that is content", PublishDate = DateTime.Now, FeedCollectionId = 2 }
+                );
         }
     }
 }

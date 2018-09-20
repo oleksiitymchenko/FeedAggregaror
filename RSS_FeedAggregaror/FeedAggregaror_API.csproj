@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FeedAggregator.DAL\FeedAggregator.DAL.csproj" />
     <ProjectReference Include="..\FeedParser\FeedParser.csproj" />
   </ItemGroup>
 
