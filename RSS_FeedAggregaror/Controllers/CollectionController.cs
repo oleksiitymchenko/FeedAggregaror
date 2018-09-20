@@ -7,7 +7,7 @@ namespace FeedAggregaror.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FeedController : ControllerBase
+    public class CollectionController : ControllerBase
     {
         // GET api/Feed
         [HttpGet]
