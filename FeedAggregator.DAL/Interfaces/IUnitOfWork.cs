@@ -8,7 +8,7 @@ namespace FeedAggregator.DAL.Interfaces
         Task<bool> SaveAsync();
 
         IUserCollectionRepository UserCollectionRepository { get; }
-        IFeedRepository FeedCollectionRepository { get; }
+        IFeedRepository FeedRepository { get; }
         IFeedItemRepository FeedItemRepository { get; }
     }
 }

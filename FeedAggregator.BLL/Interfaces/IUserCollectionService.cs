@@ -7,7 +7,7 @@ namespace FeedAggregator.BLL.Interfaces
     {
         Task<UserCollectionDto> GetUserCollectionByUserIdAsync(string id);
 
-        Task<UserCollectionDto> CreateUserCollectionAsync(string UserId);
+        Task<UserCollectionDto> CreateUserCollectionAsync();
 
         Task<bool> DeleteUserCollectionAsync(int id);
     }

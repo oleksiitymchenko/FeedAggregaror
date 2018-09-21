@@ -24,13 +24,14 @@ namespace FeedAggregaror.Controllers
         {
             try
             {
-                var dto = _feedService.AddFeedToUser(request);
+                var dto = await _feedService.AddFeedToUser(request);
+                if (dto == null) return BadRequest();
             }
             catch(Exception)
             {
                 return StatusCode(500);
             }
-            return Ok();/*(Ok(await parser.Parse("http://blogzinet.free.fr/atom.php", FeedType.Atom)));*/
+            return Ok();
         }
     }
 }

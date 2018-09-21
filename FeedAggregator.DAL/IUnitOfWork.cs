@@ -2,7 +2,9 @@
 using FeedAggregator.DAL.Data;
 using FeedAggregator.DAL.Interfaces;
 using FeedAggregator.DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace FeedAggregator.DAL
@@ -17,18 +19,29 @@ namespace FeedAggregator.DAL
         private FeedAggregatorDbContext _context;
         private IMapper _mapper;
         private IUserCollectionRepository _userCollectionRepository;
-        private IFeedRepository _feedCollectionRepository;
+        private IFeedRepository _feedRepository;
         private IFeedItemRepository _feedItemRepository;
 
         public IUserCollectionRepository UserCollectionRepository => _userCollectionRepository ?? (_userCollectionRepository = new UserCollectionRepository(_context, _mapper));
 
-        public IFeedRepository FeedCollectionRepository => _feedCollectionRepository ?? (_feedCollectionRepository = new FeedRepository(_context, _mapper));
+        public IFeedRepository FeedRepository => _feedRepository ?? (_feedRepository = new FeedRepository(_context, _mapper));
 
         public IFeedItemRepository FeedItemRepository => _feedItemRepository ?? (_feedItemRepository = new FeedItemRepository(_context, _mapper));
 
-        public Task<bool> SaveAsync()
+        public async Task<bool> SaveAsync()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var changes = _context.ChangeTracker.Entries().Count(
+                    p => p.State == EntityState.Modified || p.State == EntityState.Deleted
+                                                         || p.State == EntityState.Added);
+                if (changes == 0) return true;
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         #region IDisposable Support

@@ -33,7 +33,7 @@ namespace FeedAggregator.DAL.Repositories
             return entity;
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
             var entityToDelete = await DbSet.FindAsync(id);
             if (entityToDelete == null)
@@ -41,10 +41,10 @@ namespace FeedAggregator.DAL.Repositories
                 throw new Exception($"Entity with id: {id} not found when trying to update entity. Entity was no Deleted.");
             }
 
-            Delete(entityToDelete);
+            return Delete(entityToDelete);
         }
 
-        public void Delete(TEntity entityToDelete)
+        public bool Delete(TEntity entityToDelete)
         {
             if (Context.Entry(entityToDelete).State == EntityState.Detached)
             {
@@ -54,10 +54,12 @@ namespace FeedAggregator.DAL.Repositories
             try
             {
                DbSet.Remove(entityToDelete);
+                return true;
             }
             catch (Exception ex)
             {
                 var e = ex;
+                return false;
             }
         }
 

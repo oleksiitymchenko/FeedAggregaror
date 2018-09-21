@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net;
 using System.Threading.Tasks;
 using FeedAggregator.BLL.Interfaces;
 using FeedAggregator.Shared.Dtos;
-using FeedParser.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FeedAggregaror.Controllers
@@ -19,6 +16,7 @@ namespace FeedAggregaror.Controllers
         {
             _userCollectionService = service;
         }
+
         // GET api/feed
         [HttpGet("{id}")]
         public async Task<ActionResult<UserCollectionDto>> Get(string id)
