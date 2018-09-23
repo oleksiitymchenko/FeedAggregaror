@@ -73,7 +73,7 @@ namespace FeedAggregaror
 
             app.UseQuartz((quartz) =>
             {
-                quartz.AddJob<RefreshFeedJob>("RefreshFeed5MinutesJob", "DataRefresher", 2);                
+                quartz.AddJob<RefreshFeedJob>("RefreshFeed5MinutesJob", "DataRefresher", 15);                
             });
         }
 

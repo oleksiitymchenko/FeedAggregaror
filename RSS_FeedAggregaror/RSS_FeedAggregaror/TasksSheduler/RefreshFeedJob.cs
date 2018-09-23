@@ -18,23 +18,12 @@ namespace FeedAggregaror_API.TasksSheduler
         {
             try
             {
-               
                 var timeSpan = TimeSpan.FromMinutes(1);
-                //var deleteSource = false;
-                Console.WriteLine("=============================================");
-                Console.WriteLine("=============================================");
-                Console.WriteLine("=============================================");
-                Console.WriteLine("=============================================");
-                Console.WriteLine("=============================================");
-                Console.WriteLine("=============================================");
                 await feedService.UpdateFeeds();
-                // Run Aggregating CollectedData
-                //await feedService.AggregatingData(sourceType, destinationType, timeSpan, deleteSource);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
             }
         }
     }
