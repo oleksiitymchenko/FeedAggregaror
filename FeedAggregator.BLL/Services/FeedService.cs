@@ -44,6 +44,7 @@ namespace FeedAggregator.BLL.Services
                                 .CreateAsync(new Feed()
                                 {
                                     ChanellUrl = request.ChanellUrl,
+                                    FeedType = request.FeedType,
                                     UserCollectionId = userCollection.Id,
                                 });
 
@@ -52,6 +53,7 @@ namespace FeedAggregator.BLL.Services
                 newFeedItem.FeedCollectionId = feed.Id;
                 await uow.FeedItemRepository.CreateAsync(newFeedItem);
             });
+
             await uow.SaveAsync();
 
             return mapper.Map<Feed,FeedDto>(feed);
@@ -64,14 +66,25 @@ namespace FeedAggregator.BLL.Services
             return result;
         }
 
-        public Task UpdateFeeds()
+        public async Task UpdateFeeds()
         {
-            Console.WriteLine("FEEDSERVICE");
-            Console.WriteLine("FEEDSERVICE");
-            Console.WriteLine("FEEDSERVICE");
-            Console.WriteLine("FEEDSERVICE");
-            Console.WriteLine("FEEDSERVICE");
-            return Task.FromResult<object>(null);
+            var feeds = await uow.FeedRepository.GetAllEntities(include: o => o.Include(u => u.FeedItems));
+
+            foreach (var feed in feeds)
+            {
+                var items = await parser.Parse(feed.ChanellUrl, feed.FeedType);
+                if (items == null) throw new Exception("Error while updating field");
+
+                feed.FeedItems.ToList().ForEach(async item => await uow.FeedItemRepository.DeleteAsync(item.Id));
+
+                items.ToList().ForEach(async item => {
+                    var newFeedItem = mapper.Map<Item, FeedItem>(item);
+                    newFeedItem.FeedCollectionId = feed.Id;
+                    await uow.FeedItemRepository.CreateAsync(newFeedItem);
+                });
+            }
+
+            await uow.SaveAsync();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FeedAggregator.DAL.Entities;
+using FeedParser.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,9 @@ namespace FeedAggregator.DAL.Data
 
             modelBuilder.Entity<Feed>().HasData(
                 new Feed()
-                 { Id = 1, ChanellUrl = "http://rss.cnn.com/rss/cnn_topstories.rss", UserCollectionId = 1 },
+                 { Id = 1, ChanellUrl = "http://rss.cnn.com/rss/cnn_topstories.rss", UserCollectionId = 1, FeedType = FeedType.RSS },
                 new Feed()
-                 { Id = 2, ChanellUrl = "http://newsrss.bbc.co.uk/rss/newsonline_world_edition/americas/rss.xml", UserCollectionId = 1 });
+                 { Id = 2, ChanellUrl = "http://newsrss.bbc.co.uk/rss/newsonline_world_edition/americas/rss.xml", UserCollectionId = 1, FeedType = FeedType.RSS });
 
             modelBuilder.Entity<FeedItem>().HasData(
                 new FeedItem()

@@ -4,14 +4,16 @@ using FeedAggregator.DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FeedAggregator.DAL.Data.Migrations
 {
     [DbContext(typeof(FeedAggregatorDbContext))]
-    partial class FeedAggregatorDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180923112152_AddedFeedTypeField")]
+    partial class AddedFeedTypeField
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

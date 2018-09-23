@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using FeedParser.Entities;
+using System.Collections.Generic;
 
 namespace FeedAggregator.DAL.Entities
 {
     public class Feed:Entity
     {
         public string ChanellUrl { get; set; }
+        public FeedType FeedType { get; set; }
 
         public int UserCollectionId { get; set; }
         public UserCollection UserCollection { get; set; }
