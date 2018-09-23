@@ -5,6 +5,7 @@ using FeedAggregator.BLL.Interfaces;
 using FeedAggregator.Shared.Dtos;
 using FeedAggregator.Shared.Requests;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace FeedAggregaror.Controllers
 {
@@ -13,9 +14,12 @@ namespace FeedAggregaror.Controllers
     public class FeedController : ControllerBase
     {
         private IFeedService _feedService;
-        public FeedController(IFeedService service)
+        private ILogger _logger;
+
+        public FeedController(IFeedService service, ILogger logger)
         {
             _feedService = service;
+            _logger = logger;
         }
 
         // GET api/Feed
@@ -25,10 +29,16 @@ namespace FeedAggregaror.Controllers
             try
             {
                 var dto = await _feedService.AddFeedToUser(request);
-                if (dto == null) return BadRequest();
+                if (dto == null)
+                {
+                    _logger.LogWarning($"Feed was not created");
+                    return BadRequest();
+                }
+                _logger.LogInformation($"Feed was created with id {dto.Id}");
             }
-            catch(Exception)
+            catch (Exception)
             {
+                _logger.LogError("Error ocurred while creating Feed ");
                 return StatusCode(500);
             }
             return Ok();
@@ -41,12 +51,18 @@ namespace FeedAggregaror.Controllers
             {
                 var result = await _feedService.DeleteFeedFromUserAsync(id);
 
-                if (!result) return NotFound();
-
+                if (!result)
+                {
+                    _logger.LogWarning($"Feed with id: {id} was not found");
+                    return NotFound();
+                }
+                _logger.LogInformation($"Feed with id:{id} was deleted");
                 return Ok();
+
             }
             catch(Exception)
             {
+                _logger.LogError("Error ocurred while deleting Feed ");
                 return StatusCode(500);
             }
         }

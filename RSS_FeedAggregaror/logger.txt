@@ -1,0 +1,878 @@
+Entity Framework Core 2.1.3-rtm-32065 initialized 'FeedAggregatorDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FeedAggregator.DAL 
+Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+No migrations were applied. The database is already up to date.
+Entity Framework Core 2.1.3-rtm-32065 initialized 'FeedAggregatorDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FeedAggregator.DAL 
+Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+Executed DbCommand (237ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ChanellUrl], [u].[FeedType], [u].[UserCollectionId]
+FROM [FeedCollections] AS [u]
+ORDER BY [u].[Id]
+Executed DbCommand (70ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u.FeedItems].[Id], [u.FeedItems].[Content], [u.FeedItems].[FeedCollectionId], [u.FeedItems].[Link], [u.FeedItems].[PublishDate], [u.FeedItems].[Title]
+FROM [FeedItems] AS [u.FeedItems]
+INNER JOIN (
+    SELECT [u0].[Id]
+    FROM [FeedCollections] AS [u0]
+) AS [t] ON [u.FeedItems].[FeedCollectionId] = [t].[Id]
+ORDER BY [t].[Id]
+Request finished in 816.1473ms 404 
+Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+Request finished in 21.2185ms 404 
+Executed DbCommand (235ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (DbType = Int32), @p20='?' (DbType = Int32), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (DbType = Int32), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = Int32), @p28='?' (DbType = Int32), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Int32), @p33='?' (DbType = Int32), @p34='?' (DbType = Int32), @p35='?' (DbType = Int32), @p36='?' (DbType = Int32), @p37='?' (DbType = Int32), @p38='?' (DbType = Int32), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?' (DbType = Int32), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (DbType = Int32), @p46='?' (DbType = Int32), @p47='?' (DbType = Int32), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (Size = 4000), @p52='?' (DbType = Int32), @p53='?' (Size = 4000), @p54='?' (DbType = DateTime2), @p55='?' (Size = 4000), @p56='?' (Size = 4000), @p57='?' (DbType = Int32), @p58='?' (Size = 4000), @p59='?' (DbType = DateTime2), @p60='?' (Size = 4000), @p61='?' (Size = 4000), @p62='?' (DbType = Int32), @p63='?' (Size = 4000), @p64='?' (DbType = DateTime2), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (DbType = Int32), @p68='?' (Size = 4000), @p69='?' (DbType = DateTime2), @p70='?' (Size = 4000), @p71='?' (Size = 4000), @p72='?' (DbType = Int32), @p73='?' (Size = 4000), @p74='?' (DbType = DateTime2), @p75='?' (Size = 4000), @p76='?' (Size = 4000), @p77='?' (DbType = Int32), @p78='?' (Size = 4000), @p79='?' (DbType = DateTime2), @p80='?' (Size = 4000), @p81='?' (Size = 4000), @p82='?' (DbType = Int32), @p83='?' (Size = 4000), @p84='?' (DbType = DateTime2), @p85='?' (Size = 4000), @p86='?' (Size = 4000), @p87='?' (DbType = Int32), @p88='?' (Size = 4000), @p89='?' (DbType = DateTime2), @p90='?' (Size = 4000), @p91='?' (Size = 4000), @p92='?' (DbType = Int32), @p93='?' (Size = 4000), @p94='?' (DbType = DateTime2), @p95='?' (Size = 4000), @p96='?' (Size = 4000), @p97='?' (DbType = Int32), @p98='?' (Size = 4000), @p99='?' (DbType = DateTime2), @p100='?' (Size = 4000), @p101='?' (Size = 4000), @p102='?' (DbType = Int32), @p103='?' (Size = 4000), @p104='?' (DbType = DateTime2), @p105='?' (Size = 4000), @p106='?' (Size = 4000), @p107='?' (DbType = Int32), @p108='?' (Size = 4000), @p109='?' (DbType = DateTime2), @p110='?' (Size = 4000), @p111='?' (Size = 4000), @p112='?' (DbType = Int32), @p113='?' (Size = 4000), @p114='?' (DbType = DateTime2), @p115='?' (Size = 4000), @p116='?' (Size = 4000), @p117='?' (DbType = Int32), @p118='?' (Size = 4000), @p119='?' (DbType = DateTime2), @p120='?' (Size = 4000), @p121='?' (Size = 4000), @p122='?' (DbType = Int32), @p123='?' (Size = 4000), @p124='?' (DbType = DateTime2), @p125='?' (Size = 4000), @p126='?' (Size = 4000), @p127='?' (DbType = Int32), @p128='?' (Size = 4000), @p129='?' (DbType = DateTime2), @p130='?' (Size = 4000), @p131='?' (Size = 4000), @p132='?' (DbType = Int32), @p133='?' (Size = 4000), @p134='?' (DbType = DateTime2), @p135='?' (Size = 4000), @p136='?' (Size = 4000), @p137='?' (DbType = Int32), @p138='?' (Size = 4000), @p139='?' (DbType = DateTime2), @p140='?' (Size = 4000), @p141='?' (Size = 4000), @p142='?' (DbType = Int32), @p143='?' (Size = 4000), @p144='?' (DbType = DateTime2), @p145='?' (Size = 4000), @p146='?' (Size = 4000), @p147='?' (DbType = Int32), @p148='?' (Size = 4000), @p149='?' (DbType = DateTime2), @p150='?' (Size = 4000), @p151='?' (Size = 4000), @p152='?' (DbType = Int32), @p153='?' (Size = 4000), @p154='?' (DbType = DateTime2), @p155='?' (Size = 4000), @p156='?' (Size = 4000), @p157='?' (DbType = Int32), @p158='?' (Size = 4000), @p159='?' (DbType = DateTime2), @p160='?' (Size = 4000), @p161='?' (Size = 4000), @p162='?' (DbType = Int32), @p163='?' (Size = 4000), @p164='?' (DbType = DateTime2), @p165='?' (Size = 4000), @p166='?' (Size = 4000), @p167='?' (DbType = Int32), @p168='?' (Size = 4000), @p169='?' (DbType = DateTime2), @p170='?' (Size = 4000), @p171='?' (Size = 4000), @p172='?' (DbType = Int32), @p173='?' (Size = 4000), @p174='?' (DbType = DateTime2), @p175='?' (Size = 4000), @p176='?' (Size = 4000), @p177='?' (DbType = Int32), @p178='?' (Size = 4000), @p179='?' (DbType = DateTime2), @p180='?' (Size = 4000), @p181='?' (Size = 4000), @p182='?' (DbType = Int32), @p183='?' (Size = 4000), @p184='?' (DbType = DateTime2), @p185='?' (Size = 4000), @p186='?' (Size = 4000), @p187='?' (DbType = Int32), @p188='?' (Size = 4000), @p189='?' (DbType = DateTime2), @p190='?' (Size = 4000), @p191='?' (Size = 4000), @p192='?' (DbType = Int32), @p193='?' (Size = 4000), @p194='?' (DbType = DateTime2), @p195='?' (Size = 4000), @p196='?' (Size = 4000), @p197='?' (DbType = Int32), @p198='?' (Size = 4000), @p199='?' (DbType = DateTime2), @p200='?' (Size = 4000), @p201='?' (Size = 4000), @p202='?' (DbType = Int32), @p203='?' (Size = 4000), @p204='?' (DbType = DateTime2), @p205='?' (Size = 4000), @p206='?' (Size = 4000), @p207='?' (DbType = Int32), @p208='?' (Size = 4000), @p209='?' (DbType = DateTime2), @p210='?' (Size = 4000), @p211='?' (Size = 4000), @p212='?' (DbType = Int32), @p213='?' (Size = 4000), @p214='?' (DbType = DateTime2), @p215='?' (Size = 4000), @p216='?' (Size = 4000), @p217='?' (DbType = Int32), @p218='?' (Size = 4000), @p219='?' (DbType = DateTime2), @p220='?' (Size = 4000), @p221='?' (Size = 4000), @p222='?' (DbType = Int32), @p223='?' (Size = 4000), @p224='?' (DbType = DateTime2), @p225='?' (Size = 4000), @p226='?' (Size = 4000), @p227='?' (DbType = Int32), @p228='?' (Size = 4000), @p229='?' (DbType = DateTime2), @p230='?' (Size = 4000), @p231='?' (Size = 4000), @p232='?' (DbType = Int32), @p233='?' (Size = 4000), @p234='?' (DbType = DateTime2), @p235='?' (Size = 4000), @p236='?' (Size = 4000), @p237='?' (DbType = Int32), @p238='?' (Size = 4000), @p239='?' (DbType = DateTime2), @p240='?' (Size = 4000), @p241='?' (Size = 4000), @p242='?' (DbType = Int32), @p243='?' (Size = 4000), @p244='?' (DbType = DateTime2), @p245='?' (Size = 4000), @p246='?' (Size = 4000), @p247='?' (DbType = Int32), @p248='?' (Size = 4000), @p249='?' (DbType = DateTime2), @p250='?' (Size = 4000), @p251='?' (Size = 4000), @p252='?' (DbType = Int32), @p253='?' (Size = 4000), @p254='?' (DbType = DateTime2), @p255='?' (Size = 4000), @p256='?' (Size = 4000), @p257='?' (DbType = Int32), @p258='?' (Size = 4000), @p259='?' (DbType = DateTime2), @p260='?' (Size = 4000), @p261='?' (Size = 4000), @p262='?' (DbType = Int32), @p263='?' (Size = 4000), @p264='?' (DbType = DateTime2), @p265='?' (Size = 4000), @p266='?' (Size = 4000), @p267='?' (DbType = Int32), @p268='?' (Size = 4000), @p269='?' (DbType = DateTime2), @p270='?' (Size = 4000), @p271='?' (Size = 4000), @p272='?' (DbType = Int32), @p273='?' (Size = 4000), @p274='?' (DbType = DateTime2), @p275='?' (Size = 4000), @p276='?' (Size = 4000), @p277='?' (DbType = Int32), @p278='?' (Size = 4000), @p279='?' (DbType = DateTime2), @p280='?' (Size = 4000), @p281='?' (Size = 4000), @p282='?' (DbType = Int32), @p283='?' (Size = 4000), @p284='?' (DbType = DateTime2), @p285='?' (Size = 4000), @p286='?' (Size = 4000), @p287='?' (DbType = Int32), @p288='?' (Size = 4000), @p289='?' (DbType = DateTime2), @p290='?' (Size = 4000), @p291='?' (Size = 4000), @p292='?' (DbType = Int32), @p293='?' (Size = 4000), @p294='?' (DbType = DateTime2), @p295='?' (Size = 4000), @p296='?' (Size = 4000), @p297='?' (DbType = Int32), @p298='?' (Size = 4000), @p299='?' (DbType = DateTime2), @p300='?' (Size = 4000), @p301='?' (Size = 4000), @p302='?' (DbType = Int32), @p303='?' (Size = 4000), @p304='?' (DbType = DateTime2), @p305='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [FeedItems]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p10;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p12;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p14;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p16;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p18;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p19;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p21;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p22;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p23;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p24;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p25;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p26;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p27;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p28;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p29;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p30;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p31;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p32;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p33;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p34;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p35;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p36;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p37;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p38;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p39;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p40;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p41;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p42;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p43;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p44;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p45;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p46;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p47;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p48;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p49;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p50;
+SELECT @@ROWCOUNT;
+
+DECLARE @inserted51 TABLE ([Id] int, [_Position] [int]);
+MERGE [FeedItems] USING (
+VALUES (@p51, @p52, @p53, @p54, @p55, 0),
+(@p56, @p57, @p58, @p59, @p60, 1),
+(@p61, @p62, @p63, @p64, @p65, 2),
+(@p66, @p67, @p68, @p69, @p70, 3),
+(@p71, @p72, @p73, @p74, @p75, 4),
+(@p76, @p77, @p78, @p79, @p80, 5),
+(@p81, @p82, @p83, @p84, @p85, 6),
+(@p86, @p87, @p88, @p89, @p90, 7),
+(@p91, @p92, @p93, @p94, @p95, 8),
+(@p96, @p97, @p98, @p99, @p100, 9),
+(@p101, @p102, @p103, @p104, @p105, 10),
+(@p106, @p107, @p108, @p109, @p110, 11),
+(@p111, @p112, @p113, @p114, @p115, 12),
+(@p116, @p117, @p118, @p119, @p120, 13),
+(@p121, @p122, @p123, @p124, @p125, 14),
+(@p126, @p127, @p128, @p129, @p130, 15),
+(@p131, @p132, @p133, @p134, @p135, 16),
+(@p136, @p137, @p138, @p139, @p140, 17),
+(@p141, @p142, @p143, @p144, @p145, 18),
+(@p146, @p147, @p148, @p149, @p150, 19),
+(@p151, @p152, @p153, @p154, @p155, 20),
+(@p156, @p157, @p158, @p159, @p160, 21),
+(@p161, @p162, @p163, @p164, @p165, 22),
+(@p166, @p167, @p168, @p169, @p170, 23),
+(@p171, @p172, @p173, @p174, @p175, 24),
+(@p176, @p177, @p178, @p179, @p180, 25),
+(@p181, @p182, @p183, @p184, @p185, 26),
+(@p186, @p187, @p188, @p189, @p190, 27),
+(@p191, @p192, @p193, @p194, @p195, 28),
+(@p196, @p197, @p198, @p199, @p200, 29),
+(@p201, @p202, @p203, @p204, @p205, 30),
+(@p206, @p207, @p208, @p209, @p210, 31),
+(@p211, @p212, @p213, @p214, @p215, 32),
+(@p216, @p217, @p218, @p219, @p220, 33),
+(@p221, @p222, @p223, @p224, @p225, 34),
+(@p226, @p227, @p228, @p229, @p230, 35),
+(@p231, @p232, @p233, @p234, @p235, 36),
+(@p236, @p237, @p238, @p239, @p240, 37),
+(@p241, @p242, @p243, @p244, @p245, 38),
+(@p246, @p247, @p248, @p249, @p250, 39),
+(@p251, @p252, @p253, @p254, @p255, 40),
+(@p256, @p257, @p258, @p259, @p260, 41),
+(@p261, @p262, @p263, @p264, @p265, 42),
+(@p266, @p267, @p268, @p269, @p270, 43),
+(@p271, @p272, @p273, @p274, @p275, 44),
+(@p276, @p277, @p278, @p279, @p280, 45),
+(@p281, @p282, @p283, @p284, @p285, 46),
+(@p286, @p287, @p288, @p289, @p290, 47),
+(@p291, @p292, @p293, @p294, @p295, 48),
+(@p296, @p297, @p298, @p299, @p300, 49),
+(@p301, @p302, @p303, @p304, @p305, 50)) AS i ([Content], [FeedCollectionId], [Link], [PublishDate], [Title], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Content], [FeedCollectionId], [Link], [PublishDate], [Title])
+VALUES (i.[Content], i.[FeedCollectionId], i.[Link], i.[PublishDate], i.[Title])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted51;
+
+SELECT [t].[Id] FROM [FeedItems] t
+INNER JOIN @inserted51 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+Entity Framework Core 2.1.3-rtm-32065 initialized 'FeedAggregatorDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FeedAggregator.DAL 
+Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+No migrations were applied. The database is already up to date.
+Entity Framework Core 2.1.3-rtm-32065 initialized 'FeedAggregatorDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FeedAggregator.DAL 
+Executed DbCommand (238ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ChanellUrl], [u].[FeedType], [u].[UserCollectionId]
+FROM [FeedCollections] AS [u]
+ORDER BY [u].[Id]
+Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u.FeedItems].[Id], [u.FeedItems].[Content], [u.FeedItems].[FeedCollectionId], [u.FeedItems].[Link], [u.FeedItems].[PublishDate], [u.FeedItems].[Title]
+FROM [FeedItems] AS [u.FeedItems]
+INNER JOIN (
+    SELECT [u0].[Id]
+    FROM [FeedCollections] AS [u0]
+) AS [t] ON [u.FeedItems].[FeedCollectionId] = [t].[Id]
+ORDER BY [t].[Id]
+Request finished in 543.6026ms 404 
+Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+Request finished in 23.3229ms 404 
+Executed DbCommand (223ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (DbType = Int32), @p20='?' (DbType = Int32), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (DbType = Int32), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = Int32), @p28='?' (DbType = Int32), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Int32), @p33='?' (DbType = Int32), @p34='?' (DbType = Int32), @p35='?' (DbType = Int32), @p36='?' (DbType = Int32), @p37='?' (DbType = Int32), @p38='?' (DbType = Int32), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?' (DbType = Int32), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (DbType = Int32), @p46='?' (DbType = Int32), @p47='?' (DbType = Int32), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (Size = 4000), @p52='?' (DbType = Int32), @p53='?' (Size = 4000), @p54='?' (DbType = DateTime2), @p55='?' (Size = 4000), @p56='?' (Size = 4000), @p57='?' (DbType = Int32), @p58='?' (Size = 4000), @p59='?' (DbType = DateTime2), @p60='?' (Size = 4000), @p61='?' (Size = 4000), @p62='?' (DbType = Int32), @p63='?' (Size = 4000), @p64='?' (DbType = DateTime2), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (DbType = Int32), @p68='?' (Size = 4000), @p69='?' (DbType = DateTime2), @p70='?' (Size = 4000), @p71='?' (Size = 4000), @p72='?' (DbType = Int32), @p73='?' (Size = 4000), @p74='?' (DbType = DateTime2), @p75='?' (Size = 4000), @p76='?' (Size = 4000), @p77='?' (DbType = Int32), @p78='?' (Size = 4000), @p79='?' (DbType = DateTime2), @p80='?' (Size = 4000), @p81='?' (Size = 4000), @p82='?' (DbType = Int32), @p83='?' (Size = 4000), @p84='?' (DbType = DateTime2), @p85='?' (Size = 4000), @p86='?' (Size = 4000), @p87='?' (DbType = Int32), @p88='?' (Size = 4000), @p89='?' (DbType = DateTime2), @p90='?' (Size = 4000), @p91='?' (Size = 4000), @p92='?' (DbType = Int32), @p93='?' (Size = 4000), @p94='?' (DbType = DateTime2), @p95='?' (Size = 4000), @p96='?' (Size = 4000), @p97='?' (DbType = Int32), @p98='?' (Size = 4000), @p99='?' (DbType = DateTime2), @p100='?' (Size = 4000), @p101='?' (Size = 4000), @p102='?' (DbType = Int32), @p103='?' (Size = 4000), @p104='?' (DbType = DateTime2), @p105='?' (Size = 4000), @p106='?' (Size = 4000), @p107='?' (DbType = Int32), @p108='?' (Size = 4000), @p109='?' (DbType = DateTime2), @p110='?' (Size = 4000), @p111='?' (Size = 4000), @p112='?' (DbType = Int32), @p113='?' (Size = 4000), @p114='?' (DbType = DateTime2), @p115='?' (Size = 4000), @p116='?' (Size = 4000), @p117='?' (DbType = Int32), @p118='?' (Size = 4000), @p119='?' (DbType = DateTime2), @p120='?' (Size = 4000), @p121='?' (Size = 4000), @p122='?' (DbType = Int32), @p123='?' (Size = 4000), @p124='?' (DbType = DateTime2), @p125='?' (Size = 4000), @p126='?' (Size = 4000), @p127='?' (DbType = Int32), @p128='?' (Size = 4000), @p129='?' (DbType = DateTime2), @p130='?' (Size = 4000), @p131='?' (Size = 4000), @p132='?' (DbType = Int32), @p133='?' (Size = 4000), @p134='?' (DbType = DateTime2), @p135='?' (Size = 4000), @p136='?' (Size = 4000), @p137='?' (DbType = Int32), @p138='?' (Size = 4000), @p139='?' (DbType = DateTime2), @p140='?' (Size = 4000), @p141='?' (Size = 4000), @p142='?' (DbType = Int32), @p143='?' (Size = 4000), @p144='?' (DbType = DateTime2), @p145='?' (Size = 4000), @p146='?' (Size = 4000), @p147='?' (DbType = Int32), @p148='?' (Size = 4000), @p149='?' (DbType = DateTime2), @p150='?' (Size = 4000), @p151='?' (Size = 4000), @p152='?' (DbType = Int32), @p153='?' (Size = 4000), @p154='?' (DbType = DateTime2), @p155='?' (Size = 4000), @p156='?' (Size = 4000), @p157='?' (DbType = Int32), @p158='?' (Size = 4000), @p159='?' (DbType = DateTime2), @p160='?' (Size = 4000), @p161='?' (Size = 4000), @p162='?' (DbType = Int32), @p163='?' (Size = 4000), @p164='?' (DbType = DateTime2), @p165='?' (Size = 4000), @p166='?' (Size = 4000), @p167='?' (DbType = Int32), @p168='?' (Size = 4000), @p169='?' (DbType = DateTime2), @p170='?' (Size = 4000), @p171='?' (Size = 4000), @p172='?' (DbType = Int32), @p173='?' (Size = 4000), @p174='?' (DbType = DateTime2), @p175='?' (Size = 4000), @p176='?' (Size = 4000), @p177='?' (DbType = Int32), @p178='?' (Size = 4000), @p179='?' (DbType = DateTime2), @p180='?' (Size = 4000), @p181='?' (Size = 4000), @p182='?' (DbType = Int32), @p183='?' (Size = 4000), @p184='?' (DbType = DateTime2), @p185='?' (Size = 4000), @p186='?' (Size = 4000), @p187='?' (DbType = Int32), @p188='?' (Size = 4000), @p189='?' (DbType = DateTime2), @p190='?' (Size = 4000), @p191='?' (Size = 4000), @p192='?' (DbType = Int32), @p193='?' (Size = 4000), @p194='?' (DbType = DateTime2), @p195='?' (Size = 4000), @p196='?' (Size = 4000), @p197='?' (DbType = Int32), @p198='?' (Size = 4000), @p199='?' (DbType = DateTime2), @p200='?' (Size = 4000), @p201='?' (Size = 4000), @p202='?' (DbType = Int32), @p203='?' (Size = 4000), @p204='?' (DbType = DateTime2), @p205='?' (Size = 4000), @p206='?' (Size = 4000), @p207='?' (DbType = Int32), @p208='?' (Size = 4000), @p209='?' (DbType = DateTime2), @p210='?' (Size = 4000), @p211='?' (Size = 4000), @p212='?' (DbType = Int32), @p213='?' (Size = 4000), @p214='?' (DbType = DateTime2), @p215='?' (Size = 4000), @p216='?' (Size = 4000), @p217='?' (DbType = Int32), @p218='?' (Size = 4000), @p219='?' (DbType = DateTime2), @p220='?' (Size = 4000), @p221='?' (Size = 4000), @p222='?' (DbType = Int32), @p223='?' (Size = 4000), @p224='?' (DbType = DateTime2), @p225='?' (Size = 4000), @p226='?' (Size = 4000), @p227='?' (DbType = Int32), @p228='?' (Size = 4000), @p229='?' (DbType = DateTime2), @p230='?' (Size = 4000), @p231='?' (Size = 4000), @p232='?' (DbType = Int32), @p233='?' (Size = 4000), @p234='?' (DbType = DateTime2), @p235='?' (Size = 4000), @p236='?' (Size = 4000), @p237='?' (DbType = Int32), @p238='?' (Size = 4000), @p239='?' (DbType = DateTime2), @p240='?' (Size = 4000), @p241='?' (Size = 4000), @p242='?' (DbType = Int32), @p243='?' (Size = 4000), @p244='?' (DbType = DateTime2), @p245='?' (Size = 4000), @p246='?' (Size = 4000), @p247='?' (DbType = Int32), @p248='?' (Size = 4000), @p249='?' (DbType = DateTime2), @p250='?' (Size = 4000), @p251='?' (Size = 4000), @p252='?' (DbType = Int32), @p253='?' (Size = 4000), @p254='?' (DbType = DateTime2), @p255='?' (Size = 4000), @p256='?' (Size = 4000), @p257='?' (DbType = Int32), @p258='?' (Size = 4000), @p259='?' (DbType = DateTime2), @p260='?' (Size = 4000), @p261='?' (Size = 4000), @p262='?' (DbType = Int32), @p263='?' (Size = 4000), @p264='?' (DbType = DateTime2), @p265='?' (Size = 4000), @p266='?' (Size = 4000), @p267='?' (DbType = Int32), @p268='?' (Size = 4000), @p269='?' (DbType = DateTime2), @p270='?' (Size = 4000), @p271='?' (Size = 4000), @p272='?' (DbType = Int32), @p273='?' (Size = 4000), @p274='?' (DbType = DateTime2), @p275='?' (Size = 4000), @p276='?' (Size = 4000), @p277='?' (DbType = Int32), @p278='?' (Size = 4000), @p279='?' (DbType = DateTime2), @p280='?' (Size = 4000), @p281='?' (Size = 4000), @p282='?' (DbType = Int32), @p283='?' (Size = 4000), @p284='?' (DbType = DateTime2), @p285='?' (Size = 4000), @p286='?' (Size = 4000), @p287='?' (DbType = Int32), @p288='?' (Size = 4000), @p289='?' (DbType = DateTime2), @p290='?' (Size = 4000), @p291='?' (Size = 4000), @p292='?' (DbType = Int32), @p293='?' (Size = 4000), @p294='?' (DbType = DateTime2), @p295='?' (Size = 4000), @p296='?' (Size = 4000), @p297='?' (DbType = Int32), @p298='?' (Size = 4000), @p299='?' (DbType = DateTime2), @p300='?' (Size = 4000), @p301='?' (Size = 4000), @p302='?' (DbType = Int32), @p303='?' (Size = 4000), @p304='?' (DbType = DateTime2), @p305='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [FeedItems]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p10;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p12;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p14;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p16;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p18;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p19;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p21;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p22;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p23;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p24;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p25;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p26;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p27;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p28;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p29;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p30;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p31;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p32;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p33;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p34;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p35;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p36;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p37;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p38;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p39;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p40;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p41;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p42;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p43;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p44;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p45;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p46;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p47;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p48;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p49;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p50;
+SELECT @@ROWCOUNT;
+
+DECLARE @inserted51 TABLE ([Id] int, [_Position] [int]);
+MERGE [FeedItems] USING (
+VALUES (@p51, @p52, @p53, @p54, @p55, 0),
+(@p56, @p57, @p58, @p59, @p60, 1),
+(@p61, @p62, @p63, @p64, @p65, 2),
+(@p66, @p67, @p68, @p69, @p70, 3),
+(@p71, @p72, @p73, @p74, @p75, 4),
+(@p76, @p77, @p78, @p79, @p80, 5),
+(@p81, @p82, @p83, @p84, @p85, 6),
+(@p86, @p87, @p88, @p89, @p90, 7),
+(@p91, @p92, @p93, @p94, @p95, 8),
+(@p96, @p97, @p98, @p99, @p100, 9),
+(@p101, @p102, @p103, @p104, @p105, 10),
+(@p106, @p107, @p108, @p109, @p110, 11),
+(@p111, @p112, @p113, @p114, @p115, 12),
+(@p116, @p117, @p118, @p119, @p120, 13),
+(@p121, @p122, @p123, @p124, @p125, 14),
+(@p126, @p127, @p128, @p129, @p130, 15),
+(@p131, @p132, @p133, @p134, @p135, 16),
+(@p136, @p137, @p138, @p139, @p140, 17),
+(@p141, @p142, @p143, @p144, @p145, 18),
+(@p146, @p147, @p148, @p149, @p150, 19),
+(@p151, @p152, @p153, @p154, @p155, 20),
+(@p156, @p157, @p158, @p159, @p160, 21),
+(@p161, @p162, @p163, @p164, @p165, 22),
+(@p166, @p167, @p168, @p169, @p170, 23),
+(@p171, @p172, @p173, @p174, @p175, 24),
+(@p176, @p177, @p178, @p179, @p180, 25),
+(@p181, @p182, @p183, @p184, @p185, 26),
+(@p186, @p187, @p188, @p189, @p190, 27),
+(@p191, @p192, @p193, @p194, @p195, 28),
+(@p196, @p197, @p198, @p199, @p200, 29),
+(@p201, @p202, @p203, @p204, @p205, 30),
+(@p206, @p207, @p208, @p209, @p210, 31),
+(@p211, @p212, @p213, @p214, @p215, 32),
+(@p216, @p217, @p218, @p219, @p220, 33),
+(@p221, @p222, @p223, @p224, @p225, 34),
+(@p226, @p227, @p228, @p229, @p230, 35),
+(@p231, @p232, @p233, @p234, @p235, 36),
+(@p236, @p237, @p238, @p239, @p240, 37),
+(@p241, @p242, @p243, @p244, @p245, 38),
+(@p246, @p247, @p248, @p249, @p250, 39),
+(@p251, @p252, @p253, @p254, @p255, 40),
+(@p256, @p257, @p258, @p259, @p260, 41),
+(@p261, @p262, @p263, @p264, @p265, 42),
+(@p266, @p267, @p268, @p269, @p270, 43),
+(@p271, @p272, @p273, @p274, @p275, 44),
+(@p276, @p277, @p278, @p279, @p280, 45),
+(@p281, @p282, @p283, @p284, @p285, 46),
+(@p286, @p287, @p288, @p289, @p290, 47),
+(@p291, @p292, @p293, @p294, @p295, 48),
+(@p296, @p297, @p298, @p299, @p300, 49),
+(@p301, @p302, @p303, @p304, @p305, 50)) AS i ([Content], [FeedCollectionId], [Link], [PublishDate], [Title], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Content], [FeedCollectionId], [Link], [PublishDate], [Title])
+VALUES (i.[Content], i.[FeedCollectionId], i.[Link], i.[PublishDate], i.[Title])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted51;
+
+SELECT [t].[Id] FROM [FeedItems] t
+INNER JOIN @inserted51 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ChanellUrl], [u].[FeedType], [u].[UserCollectionId]
+FROM [FeedCollections] AS [u]
+ORDER BY [u].[Id]
+Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u.FeedItems].[Id], [u.FeedItems].[Content], [u.FeedItems].[FeedCollectionId], [u.FeedItems].[Link], [u.FeedItems].[PublishDate], [u.FeedItems].[Title]
+FROM [FeedItems] AS [u.FeedItems]
+INNER JOIN (
+    SELECT [u0].[Id]
+    FROM [FeedCollections] AS [u0]
+) AS [t] ON [u.FeedItems].[FeedCollectionId] = [t].[Id]
+ORDER BY [t].[Id]
+Executed DbCommand (255ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Int32), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (DbType = Int32), @p20='?' (DbType = Int32), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?' (DbType = Int32), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = Int32), @p28='?' (DbType = Int32), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Int32), @p33='?' (DbType = Int32), @p34='?' (DbType = Int32), @p35='?' (DbType = Int32), @p36='?' (DbType = Int32), @p37='?' (DbType = Int32), @p38='?' (DbType = Int32), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?' (DbType = Int32), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (DbType = Int32), @p46='?' (DbType = Int32), @p47='?' (DbType = Int32), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (Size = 4000), @p52='?' (DbType = Int32), @p53='?' (Size = 4000), @p54='?' (DbType = DateTime2), @p55='?' (Size = 4000), @p56='?' (Size = 4000), @p57='?' (DbType = Int32), @p58='?' (Size = 4000), @p59='?' (DbType = DateTime2), @p60='?' (Size = 4000), @p61='?' (Size = 4000), @p62='?' (DbType = Int32), @p63='?' (Size = 4000), @p64='?' (DbType = DateTime2), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (DbType = Int32), @p68='?' (Size = 4000), @p69='?' (DbType = DateTime2), @p70='?' (Size = 4000), @p71='?' (Size = 4000), @p72='?' (DbType = Int32), @p73='?' (Size = 4000), @p74='?' (DbType = DateTime2), @p75='?' (Size = 4000), @p76='?' (Size = 4000), @p77='?' (DbType = Int32), @p78='?' (Size = 4000), @p79='?' (DbType = DateTime2), @p80='?' (Size = 4000), @p81='?' (Size = 4000), @p82='?' (DbType = Int32), @p83='?' (Size = 4000), @p84='?' (DbType = DateTime2), @p85='?' (Size = 4000), @p86='?' (Size = 4000), @p87='?' (DbType = Int32), @p88='?' (Size = 4000), @p89='?' (DbType = DateTime2), @p90='?' (Size = 4000), @p91='?' (Size = 4000), @p92='?' (DbType = Int32), @p93='?' (Size = 4000), @p94='?' (DbType = DateTime2), @p95='?' (Size = 4000), @p96='?' (Size = 4000), @p97='?' (DbType = Int32), @p98='?' (Size = 4000), @p99='?' (DbType = DateTime2), @p100='?' (Size = 4000), @p101='?' (Size = 4000), @p102='?' (DbType = Int32), @p103='?' (Size = 4000), @p104='?' (DbType = DateTime2), @p105='?' (Size = 4000), @p106='?' (Size = 4000), @p107='?' (DbType = Int32), @p108='?' (Size = 4000), @p109='?' (DbType = DateTime2), @p110='?' (Size = 4000), @p111='?' (Size = 4000), @p112='?' (DbType = Int32), @p113='?' (Size = 4000), @p114='?' (DbType = DateTime2), @p115='?' (Size = 4000), @p116='?' (Size = 4000), @p117='?' (DbType = Int32), @p118='?' (Size = 4000), @p119='?' (DbType = DateTime2), @p120='?' (Size = 4000), @p121='?' (Size = 4000), @p122='?' (DbType = Int32), @p123='?' (Size = 4000), @p124='?' (DbType = DateTime2), @p125='?' (Size = 4000), @p126='?' (Size = 4000), @p127='?' (DbType = Int32), @p128='?' (Size = 4000), @p129='?' (DbType = DateTime2), @p130='?' (Size = 4000), @p131='?' (Size = 4000), @p132='?' (DbType = Int32), @p133='?' (Size = 4000), @p134='?' (DbType = DateTime2), @p135='?' (Size = 4000), @p136='?' (Size = 4000), @p137='?' (DbType = Int32), @p138='?' (Size = 4000), @p139='?' (DbType = DateTime2), @p140='?' (Size = 4000), @p141='?' (Size = 4000), @p142='?' (DbType = Int32), @p143='?' (Size = 4000), @p144='?' (DbType = DateTime2), @p145='?' (Size = 4000), @p146='?' (Size = 4000), @p147='?' (DbType = Int32), @p148='?' (Size = 4000), @p149='?' (DbType = DateTime2), @p150='?' (Size = 4000), @p151='?' (Size = 4000), @p152='?' (DbType = Int32), @p153='?' (Size = 4000), @p154='?' (DbType = DateTime2), @p155='?' (Size = 4000), @p156='?' (Size = 4000), @p157='?' (DbType = Int32), @p158='?' (Size = 4000), @p159='?' (DbType = DateTime2), @p160='?' (Size = 4000), @p161='?' (Size = 4000), @p162='?' (DbType = Int32), @p163='?' (Size = 4000), @p164='?' (DbType = DateTime2), @p165='?' (Size = 4000), @p166='?' (Size = 4000), @p167='?' (DbType = Int32), @p168='?' (Size = 4000), @p169='?' (DbType = DateTime2), @p170='?' (Size = 4000), @p171='?' (Size = 4000), @p172='?' (DbType = Int32), @p173='?' (Size = 4000), @p174='?' (DbType = DateTime2), @p175='?' (Size = 4000), @p176='?' (Size = 4000), @p177='?' (DbType = Int32), @p178='?' (Size = 4000), @p179='?' (DbType = DateTime2), @p180='?' (Size = 4000), @p181='?' (Size = 4000), @p182='?' (DbType = Int32), @p183='?' (Size = 4000), @p184='?' (DbType = DateTime2), @p185='?' (Size = 4000), @p186='?' (Size = 4000), @p187='?' (DbType = Int32), @p188='?' (Size = 4000), @p189='?' (DbType = DateTime2), @p190='?' (Size = 4000), @p191='?' (Size = 4000), @p192='?' (DbType = Int32), @p193='?' (Size = 4000), @p194='?' (DbType = DateTime2), @p195='?' (Size = 4000), @p196='?' (Size = 4000), @p197='?' (DbType = Int32), @p198='?' (Size = 4000), @p199='?' (DbType = DateTime2), @p200='?' (Size = 4000), @p201='?' (Size = 4000), @p202='?' (DbType = Int32), @p203='?' (Size = 4000), @p204='?' (DbType = DateTime2), @p205='?' (Size = 4000), @p206='?' (Size = 4000), @p207='?' (DbType = Int32), @p208='?' (Size = 4000), @p209='?' (DbType = DateTime2), @p210='?' (Size = 4000), @p211='?' (Size = 4000), @p212='?' (DbType = Int32), @p213='?' (Size = 4000), @p214='?' (DbType = DateTime2), @p215='?' (Size = 4000), @p216='?' (Size = 4000), @p217='?' (DbType = Int32), @p218='?' (Size = 4000), @p219='?' (DbType = DateTime2), @p220='?' (Size = 4000), @p221='?' (Size = 4000), @p222='?' (DbType = Int32), @p223='?' (Size = 4000), @p224='?' (DbType = DateTime2), @p225='?' (Size = 4000), @p226='?' (Size = 4000), @p227='?' (DbType = Int32), @p228='?' (Size = 4000), @p229='?' (DbType = DateTime2), @p230='?' (Size = 4000), @p231='?' (Size = 4000), @p232='?' (DbType = Int32), @p233='?' (Size = 4000), @p234='?' (DbType = DateTime2), @p235='?' (Size = 4000), @p236='?' (Size = 4000), @p237='?' (DbType = Int32), @p238='?' (Size = 4000), @p239='?' (DbType = DateTime2), @p240='?' (Size = 4000), @p241='?' (Size = 4000), @p242='?' (DbType = Int32), @p243='?' (Size = 4000), @p244='?' (DbType = DateTime2), @p245='?' (Size = 4000), @p246='?' (Size = 4000), @p247='?' (DbType = Int32), @p248='?' (Size = 4000), @p249='?' (DbType = DateTime2), @p250='?' (Size = 4000), @p251='?' (Size = 4000), @p252='?' (DbType = Int32), @p253='?' (Size = 4000), @p254='?' (DbType = DateTime2), @p255='?' (Size = 4000), @p256='?' (Size = 4000), @p257='?' (DbType = Int32), @p258='?' (Size = 4000), @p259='?' (DbType = DateTime2), @p260='?' (Size = 4000), @p261='?' (Size = 4000), @p262='?' (DbType = Int32), @p263='?' (Size = 4000), @p264='?' (DbType = DateTime2), @p265='?' (Size = 4000), @p266='?' (Size = 4000), @p267='?' (DbType = Int32), @p268='?' (Size = 4000), @p269='?' (DbType = DateTime2), @p270='?' (Size = 4000), @p271='?' (Size = 4000), @p272='?' (DbType = Int32), @p273='?' (Size = 4000), @p274='?' (DbType = DateTime2), @p275='?' (Size = 4000), @p276='?' (Size = 4000), @p277='?' (DbType = Int32), @p278='?' (Size = 4000), @p279='?' (DbType = DateTime2), @p280='?' (Size = 4000), @p281='?' (Size = 4000), @p282='?' (DbType = Int32), @p283='?' (Size = 4000), @p284='?' (DbType = DateTime2), @p285='?' (Size = 4000), @p286='?' (Size = 4000), @p287='?' (DbType = Int32), @p288='?' (Size = 4000), @p289='?' (DbType = DateTime2), @p290='?' (Size = 4000), @p291='?' (Size = 4000), @p292='?' (DbType = Int32), @p293='?' (Size = 4000), @p294='?' (DbType = DateTime2), @p295='?' (Size = 4000), @p296='?' (Size = 4000), @p297='?' (DbType = Int32), @p298='?' (Size = 4000), @p299='?' (DbType = DateTime2), @p300='?' (Size = 4000), @p301='?' (Size = 4000), @p302='?' (DbType = Int32), @p303='?' (Size = 4000), @p304='?' (DbType = DateTime2), @p305='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [FeedItems]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p10;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p11;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p12;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p13;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p14;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p15;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p16;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p17;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p18;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p19;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p21;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p22;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p23;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p24;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p25;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p26;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p27;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p28;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p29;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p30;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p31;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p32;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p33;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p34;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p35;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p36;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p37;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p38;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p39;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p40;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p41;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p42;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p43;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p44;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p45;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p46;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p47;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p48;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p49;
+SELECT @@ROWCOUNT;
+
+DELETE FROM [FeedItems]
+WHERE [Id] = @p50;
+SELECT @@ROWCOUNT;
+
+DECLARE @inserted51 TABLE ([Id] int, [_Position] [int]);
+MERGE [FeedItems] USING (
+VALUES (@p51, @p52, @p53, @p54, @p55, 0),
+(@p56, @p57, @p58, @p59, @p60, 1),
+(@p61, @p62, @p63, @p64, @p65, 2),
+(@p66, @p67, @p68, @p69, @p70, 3),
+(@p71, @p72, @p73, @p74, @p75, 4),
+(@p76, @p77, @p78, @p79, @p80, 5),
+(@p81, @p82, @p83, @p84, @p85, 6),
+(@p86, @p87, @p88, @p89, @p90, 7),
+(@p91, @p92, @p93, @p94, @p95, 8),
+(@p96, @p97, @p98, @p99, @p100, 9),
+(@p101, @p102, @p103, @p104, @p105, 10),
+(@p106, @p107, @p108, @p109, @p110, 11),
+(@p111, @p112, @p113, @p114, @p115, 12),
+(@p116, @p117, @p118, @p119, @p120, 13),
+(@p121, @p122, @p123, @p124, @p125, 14),
+(@p126, @p127, @p128, @p129, @p130, 15),
+(@p131, @p132, @p133, @p134, @p135, 16),
+(@p136, @p137, @p138, @p139, @p140, 17),
+(@p141, @p142, @p143, @p144, @p145, 18),
+(@p146, @p147, @p148, @p149, @p150, 19),
+(@p151, @p152, @p153, @p154, @p155, 20),
+(@p156, @p157, @p158, @p159, @p160, 21),
+(@p161, @p162, @p163, @p164, @p165, 22),
+(@p166, @p167, @p168, @p169, @p170, 23),
+(@p171, @p172, @p173, @p174, @p175, 24),
+(@p176, @p177, @p178, @p179, @p180, 25),
+(@p181, @p182, @p183, @p184, @p185, 26),
+(@p186, @p187, @p188, @p189, @p190, 27),
+(@p191, @p192, @p193, @p194, @p195, 28),
+(@p196, @p197, @p198, @p199, @p200, 29),
+(@p201, @p202, @p203, @p204, @p205, 30),
+(@p206, @p207, @p208, @p209, @p210, 31),
+(@p211, @p212, @p213, @p214, @p215, 32),
+(@p216, @p217, @p218, @p219, @p220, 33),
+(@p221, @p222, @p223, @p224, @p225, 34),
+(@p226, @p227, @p228, @p229, @p230, 35),
+(@p231, @p232, @p233, @p234, @p235, 36),
+(@p236, @p237, @p238, @p239, @p240, 37),
+(@p241, @p242, @p243, @p244, @p245, 38),
+(@p246, @p247, @p248, @p249, @p250, 39),
+(@p251, @p252, @p253, @p254, @p255, 40),
+(@p256, @p257, @p258, @p259, @p260, 41),
+(@p261, @p262, @p263, @p264, @p265, 42),
+(@p266, @p267, @p268, @p269, @p270, 43),
+(@p271, @p272, @p273, @p274, @p275, 44),
+(@p276, @p277, @p278, @p279, @p280, 45),
+(@p281, @p282, @p283, @p284, @p285, 46),
+(@p286, @p287, @p288, @p289, @p290, 47),
+(@p291, @p292, @p293, @p294, @p295, 48),
+(@p296, @p297, @p298, @p299, @p300, 49),
+(@p301, @p302, @p303, @p304, @p305, 50)) AS i ([Content], [FeedCollectionId], [Link], [PublishDate], [Title], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Content], [FeedCollectionId], [Link], [PublishDate], [Title])
+VALUES (i.[Content], i.[FeedCollectionId], i.[Link], i.[PublishDate], i.[Title])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted51;
+
+SELECT [t].[Id] FROM [FeedItems] t
+INNER JOIN @inserted51 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+Request starting HTTP/1.1 GET http://localhost:5000/api/collection/12345678  
+Route matched with {action = "Get", controller = "Collection"}. Executing action FeedAggregaror.Controllers.CollectionController.Get (FeedAggregaror_API)
+Executed action FeedAggregaror.Controllers.CollectionController.Get (FeedAggregaror_API) in 133.9381ms
+An unhandled exception has occurred while executing the request.
+Request finished in 4653.6123ms 500 text/html; charset=utf-8
+UserCollection id:12345678 is found
+UserCollection id:12345678 is found
+UserCollection id:12345678 is found

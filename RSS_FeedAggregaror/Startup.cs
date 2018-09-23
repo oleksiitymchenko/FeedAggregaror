@@ -2,6 +2,7 @@
 using FeedAggregaror_API.TasksSheduler;
 using FeedAggregator.BLL.Interfaces;
 using FeedAggregator.BLL.MappingProfiles;
+using FeedAggregator.BLL.Providers.Logger;
 using FeedAggregator.BLL.Services;
 using FeedAggregator.DAL;
 using FeedAggregator.DAL.Data;
@@ -13,7 +14,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Quartz.Spi;
+using System.IO;
 
 namespace FeedAggregaror
 {
@@ -45,6 +48,7 @@ namespace FeedAggregaror
             services.AddTransient<IUserCollectionService, UserCollectionService>();
 
             ConfigureBackgroundJobs(services);
+            ConfigureLogger(services, new LoggerFactory());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,6 +75,13 @@ namespace FeedAggregaror
             {
                 quartz.AddJob<RefreshFeedJob>("RefreshFeed5MinutesJob", "DataRefresher", 2);                
             });
+        }
+
+        public virtual void ConfigureLogger(IServiceCollection services, ILoggerFactory loggerFactory)
+        {
+            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "logger.txt"));
+            var logger = loggerFactory.CreateLogger("FileLoger");
+            services.AddSingleton<ILogger>(logger);
         }
 
         public virtual IServiceCollection ConfigureBackgroundJobs(IServiceCollection services)
