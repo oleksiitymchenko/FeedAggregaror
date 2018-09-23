@@ -47,5 +47,21 @@ namespace FeedAggregaror.Controllers
                 return StatusCode(500);
             }
         }
+
+        // DEL api/collection/userid
+        [HttpDelete]
+        public async Task<ActionResult> Delete(int userId)
+        {
+            try
+            {
+                var result = await _userCollectionService.DeleteUserCollectionAsync(userId);
+                if (!result) return NotFound();
+                return Ok();
+            }
+            catch(Exception)
+            {
+                return StatusCode(500);
+            }
+        }
     }
 }

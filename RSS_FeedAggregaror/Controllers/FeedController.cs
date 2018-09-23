@@ -34,7 +34,7 @@ namespace FeedAggregaror.Controllers
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
             try
@@ -42,6 +42,8 @@ namespace FeedAggregaror.Controllers
                 var result = await _feedService.DeleteFeedFromUserAsync(id);
 
                 if (!result) return NotFound();
+
+                return Ok();
             }
             catch(Exception)
             {

@@ -11,7 +11,9 @@ namespace FeedAggregator.BLL.MappingProfiles
             CreateMap<Feed, Feed>()
                 .ForMember(d => d.Id, o => o.Ignore());
 
-            CreateMap<Feed, FeedDto>();                
+            CreateMap<Feed, FeedDto>();
+
+            CreateMap<FeedDto, Feed>();
         }
     }
 }

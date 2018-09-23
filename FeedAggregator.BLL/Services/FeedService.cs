@@ -48,18 +48,19 @@ namespace FeedAggregator.BLL.Services
                                 });
 
             items.ToList().ForEach(async item => {
-                var newFeedItem = Mapper.Map<Item, FeedItem>(item);
+                var newFeedItem = mapper.Map<Item, FeedItem>(item);
                 newFeedItem.FeedCollectionId = feed.Id;
                 await uow.FeedItemRepository.CreateAsync(newFeedItem);
             });
             await uow.SaveAsync();
 
-            return Mapper.Map<Feed,FeedDto>(feed);
+            return mapper.Map<Feed,FeedDto>(feed);
         }
 
         public async Task<bool> DeleteFeedFromUserAsync(int id)
         {
             var result = await uow.FeedRepository.DeleteAsync(id);
+            await uow.SaveAsync();
             return result;
         }
     }

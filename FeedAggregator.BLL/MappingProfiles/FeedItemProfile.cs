@@ -15,6 +15,8 @@ namespace FeedAggregator.BLL.MappingProfiles
             CreateMap<FeedItem, FeedItemDto>();
 
             CreateMap<FeedItem, Item>();
+
+            CreateMap<Item, FeedItem>();
         }
     }
 }

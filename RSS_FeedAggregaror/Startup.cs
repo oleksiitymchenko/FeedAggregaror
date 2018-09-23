@@ -5,6 +5,7 @@ using FeedAggregator.BLL.Services;
 using FeedAggregator.DAL;
 using FeedAggregator.DAL.Data;
 using FeedAggregator.DAL.Interfaces;
+using FeedParser;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,8 @@ namespace FeedAggregaror
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             ConfigureAutomapper(services);
 
             services.AddDbContext<FeedAggregatorDbContext>(options =>
@@ -34,7 +37,8 @@ namespace FeedAggregaror
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddTransient<ItemsParser>();
             services.AddTransient<IFeedService, FeedService>();
             services.AddTransient<IUserCollectionService, UserCollectionService>();
            
@@ -49,6 +53,8 @@ namespace FeedAggregaror
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMvc();
+
             using (var serviceScope = app.ApplicationServices
                 .GetRequiredService<IServiceScopeFactory>()
                 .CreateScope())
@@ -58,8 +64,6 @@ namespace FeedAggregaror
                     context?.Database?.Migrate();
                 }
             }
-
-            app.UseMvc();
         }
 
 
