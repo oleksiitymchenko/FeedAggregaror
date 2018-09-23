@@ -1,6 +1,10 @@
 ﻿using AutoMapper;
+using FeedAggregator.BLL.Interfaces;
 using FeedAggregator.BLL.MappingProfiles;
+using FeedAggregator.BLL.Services;
+using FeedAggregator.DAL;
 using FeedAggregator.DAL.Data;
+using FeedAggregator.DAL.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -24,11 +28,16 @@ namespace FeedAggregaror
         {
             ConfigureAutomapper(services);
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
             services.AddDbContext<FeedAggregatorDbContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                                         b => b.MigrationsAssembly("FeedAggregator.DAL")));
+                   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                                        b => b.MigrationsAssembly("FeedAggregator.DAL")));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddTransient<IFeedService, FeedService>();
+            services.AddTransient<IUserCollectionService, UserCollectionService>();
+           
 
         }
 

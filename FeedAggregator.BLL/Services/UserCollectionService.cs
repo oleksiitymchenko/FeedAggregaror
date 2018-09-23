@@ -14,9 +14,10 @@ namespace FeedAggregator.BLL.Services
         private readonly IUnitOfWork uow;
         private readonly IMapper mapper;
 
-        public UserCollectionService(IUnitOfWork unitOfWork)
+        public UserCollectionService(IUnitOfWork unitOfWork, IMapper automapper)
         {
             uow = unitOfWork;
+            mapper = automapper;
         }
 
         public async Task<UserCollectionDto> CreateUserCollectionAsync()
@@ -44,7 +45,8 @@ namespace FeedAggregator.BLL.Services
             var entity = await uow.UserCollectionRepository
                                   .GetFirstOrDefaultAsync(
                                       predicate: u => u.UserId == id,
-                                      include: uc => uc.Include(u => u.FeedCollections));
+                                      include: uc => uc.Include(u => u.FeedCollections)
+                                                       .ThenInclude( feed => feed.FeedItems));
 
             if (entity == null) return null;
 

@@ -33,5 +33,20 @@ namespace FeedAggregaror.Controllers
             }
             return Ok();
         }
+
+        [HttpDelete]
+        public async Task<ActionResult> Delete(int id)
+        {
+            try
+            {
+                var result = await _feedService.DeleteFeedFromUserAsync(id);
+
+                if (!result) return NotFound();
+            }
+            catch(Exception)
+            {
+                return StatusCode(500);
+            }
+        }
     }
 }

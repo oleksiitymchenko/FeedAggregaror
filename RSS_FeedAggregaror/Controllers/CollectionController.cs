@@ -17,7 +17,7 @@ namespace FeedAggregaror.Controllers
             _userCollectionService = service;
         }
 
-        // GET api/feed
+        // GET api/collection
         [HttpGet("{id}")]
         public async Task<ActionResult<UserCollectionDto>> Get(string id)
         {
@@ -28,6 +28,21 @@ namespace FeedAggregaror.Controllers
                 return Ok(dto);
             }
             catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+
+        // POST api/collection
+        [HttpPost]
+        public async Task<ActionResult<UserCollectionDto>> Create()
+        {
+            try
+            {
+                var dto = await _userCollectionService.CreateUserCollectionAsync();
+                return Ok(dto);
+            }
+            catch(Exception)
             {
                 return StatusCode(500);
             }
