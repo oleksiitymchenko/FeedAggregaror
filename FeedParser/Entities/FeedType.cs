@@ -1,6 +1,6 @@
 ﻿namespace FeedParser.Entities
 {
-    public enum FeedType
+    public enum FeedType 
     {
         RSS,
         Atom

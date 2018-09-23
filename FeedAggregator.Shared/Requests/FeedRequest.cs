@@ -1,4 +1,4 @@
-﻿using FeedAggregator.Shared.Enums;
+﻿using FeedParser.Entities;
 
 namespace FeedAggregator.Shared.Requests
 {

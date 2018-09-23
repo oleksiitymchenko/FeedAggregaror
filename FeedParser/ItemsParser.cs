@@ -35,7 +35,7 @@ namespace FeedParser
             }
             catch
             {
-                throw new Exception("Something gone wrong in feedparser");
+                return null;
             }
         }
 
@@ -52,7 +52,7 @@ namespace FeedParser
             }
             catch
             {
-                throw new Exception("Something gone wrong in feedparser");
+                return null;
             }
         }
 

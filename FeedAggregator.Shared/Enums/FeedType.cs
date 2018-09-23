@@ -1,6 +1,8 @@
-﻿namespace FeedAggregator.Shared.Enums
+﻿using FeedParser.Entities;
+
+namespace FeedAggregator.Shared.Enums
 {
-    public enum FeedType
+    public enum FeedTypeDto:FeedType
     {
         RSS,
         Atom

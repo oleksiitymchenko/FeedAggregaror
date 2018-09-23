@@ -6,6 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FeedAggregator.DAL\FeedAggregator.DAL.csproj" />
+    <ProjectReference Include="..\FeedAggregator.Shared\FeedAggregator.Shared.csproj" />
+    <ProjectReference Include="..\FeedParser\FeedParser.csproj" />
   </ItemGroup>
 
 </Project>
