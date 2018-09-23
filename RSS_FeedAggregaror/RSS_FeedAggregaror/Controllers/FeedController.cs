@@ -35,13 +35,13 @@ namespace FeedAggregaror.Controllers
                     return BadRequest();
                 }
                 _logger.LogInformation($"Feed was created with id {dto.Id}");
+                return Ok(dto);
             }
             catch (Exception)
             {
                 _logger.LogError("Error ocurred while creating Feed ");
                 return StatusCode(500);
             }
-            return Ok();
         }
 
         [HttpDelete("{id}")]
@@ -58,7 +58,6 @@ namespace FeedAggregaror.Controllers
                 }
                 _logger.LogInformation($"Feed with id:{id} was deleted");
                 return Ok();
-
             }
             catch(Exception)
             {

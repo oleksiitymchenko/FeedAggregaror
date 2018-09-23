@@ -876,3 +876,25 @@ Request finished in 4653.6123ms 500 text/html; charset=utf-8
 UserCollection id:12345678 is found
 UserCollection id:12345678 is found
 UserCollection id:12345678 is found
+UserCollection id:12345678 is found
+Feed was created with id 3
+UserCollection id:2 is created
+UserCollection id:3 is created
+UserCollection id:3 is deleted
+UserCollection id:8af8c73f-a49a-48c7-8de0-3aff8016b3bd is found
+UserCollection id:8af8c73f-a49a-48c7-8de0-3aff8016b3bd is found
+UserCollection id:2 is deleted
+UserCollection id:8af8c73f-a49a-48c7-8de0-3aff8016b3bd not found
+UserCollection id:12345678 is found
+UserCollection id:4 is created
+UserCollection id:12345678 is found
+UserCollection id:5 is created
+Feed was created with id 4
+Feed was created with id 5
+UserCollection id:c59f7c5b-093a-447f-b607-95795e5b1f41 is found
+Feed with id:5 was deleted
+UserCollection id:c59f7c5b-093a-447f-b607-95795e5b1f41 is found
+UserCollection id:6 is created
+UserCollection id:7 is created
+UserCollection id:31240c8a-0f0b-40f1-94f0-a32d2337a2d9 is found
+Feed was created with id 6
