@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedAggregator.BLL", "FeedA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedAggregator.Shared", "FeedAggregator.Shared\FeedAggregator.Shared.csproj", "{A7B63126-0302-433A-9B90-F20594F8A04B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedParser", "FeedParser\FeedParser.csproj", "{BEBE4EF4-E068-4EE0-AA74-2A113880A901}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedParser", "FeedParser\FeedParser.csproj", "{BEBE4EF4-E068-4EE0-AA74-2A113880A901}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
