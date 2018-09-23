@@ -9,5 +9,7 @@ namespace FeedAggregator.BLL.Interfaces
         Task<FeedDto> AddFeedToUser(FeedRequest request);
 
         Task<bool> DeleteFeedFromUserAsync(int id);
+
+        Task UpdateFeeds();
     }
 }

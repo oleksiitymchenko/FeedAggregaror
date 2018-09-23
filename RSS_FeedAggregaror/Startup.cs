@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FeedAggregaror_API.TasksSheduler;
 using FeedAggregator.BLL.Interfaces;
 using FeedAggregator.BLL.MappingProfiles;
 using FeedAggregator.BLL.Services;
@@ -12,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Quartz.Spi;
 
 namespace FeedAggregaror
 {
@@ -27,6 +29,12 @@ namespace FeedAggregaror
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            System.Console.WriteLine("STARTUP");
+            System.Console.WriteLine("STARTUP");
+            System.Console.WriteLine("STARTUP");
+            System.Console.WriteLine("STARTUP");
+            System.Console.WriteLine("STARTUP");
+            System.Console.WriteLine("STARTUP");
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             ConfigureAutomapper(services);
@@ -41,8 +49,8 @@ namespace FeedAggregaror
             services.AddTransient<ItemsParser>();
             services.AddTransient<IFeedService, FeedService>();
             services.AddTransient<IUserCollectionService, UserCollectionService>();
-           
 
+            ConfigureBackgroundJobs(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,8 +72,25 @@ namespace FeedAggregaror
                     context?.Database?.Migrate();
                 }
             }
+
+            app.UseQuartz((quartz) =>
+            {
+                quartz.AddJob<RefreshFeedJob>("RefreshFeed5MinutesJob", "DataRefresher", 2);                
+            });
         }
 
+        public virtual IServiceCollection ConfigureBackgroundJobs(IServiceCollection services)
+        {
+            services.AddTransient<RefreshFeedJob>();
+
+            services.AddTransient<IJobFactory, JobFactory>(
+               (provider) =>
+               {
+                   return new JobFactory(provider);
+               });
+
+            return services;
+        }
 
         public virtual IServiceCollection ConfigureAutomapper(IServiceCollection services)
         {

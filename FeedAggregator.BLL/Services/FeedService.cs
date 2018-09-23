@@ -63,5 +63,15 @@ namespace FeedAggregator.BLL.Services
             await uow.SaveAsync();
             return result;
         }
+
+        public Task UpdateFeeds()
+        {
+            Console.WriteLine("FEEDSERVICE");
+            Console.WriteLine("FEEDSERVICE");
+            Console.WriteLine("FEEDSERVICE");
+            Console.WriteLine("FEEDSERVICE");
+            Console.WriteLine("FEEDSERVICE");
+            return Task.FromResult<object>(null);
+        }
     }
 }
